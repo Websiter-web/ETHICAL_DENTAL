@@ -6,38 +6,7 @@
     
     <title>Ethical Dental | Dr. Siddharth Garg | Best Dental Clinic in Rohini</title>
     <meta name="description" content="Top-rated dental clinic in Rohini, North Delhi. Dr. Siddharth Garg offers advanced, ethical dental care. NABH accredited & CGHS empanelled. Book your appointment today!">
-    <meta name="keywords" content="Best dentist in Rohini, Dental clinic North Delhi, Dr Siddharth Garg, Ethical Dental, root canal, dental implants, NABH accredited dental clinic">
-    <meta name="author" content="Ethical Dental">
-    <meta name="robots" content="index, follow">
     
-    <meta property="og:title" content="Ethical Dental | Expert Dental Care in Rohini">
-    <meta property="og:description" content="Experience world-class, painless dentistry with Dr. Siddharth Garg. Over 18 years of excellence.">
-    <meta property="og:type" content="website">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Dentist",
-      "name": "Ethical Dental | Dr. Siddharth Garg",
-      "image": "https://via.placeholder.com/800",
-      "description": "High-quality dental services in Rohini, New Delhi. NABH Accredited.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "D-10/8, Pocket 10, Sector 8, Rohini",
-        "addressLocality": "New Delhi",
-        "addressRegion": "Delhi",
-        "postalCode": "110085",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-11-41410494",
-      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-20:00",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "139"
-      }
-    }
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -132,13 +101,20 @@
             display: none; cursor: pointer; font-size: 1.8rem; color: var(--primary-color); z-index: 1001; border: none; background: transparent;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (FIXED FOR OVERLAP) --- */
         #hero {
             position: relative;
             background: linear-gradient(rgba(0, 91, 150, 0.85), rgba(0, 168, 150, 0.85)), url('https://via.placeholder.com/1920x1080/e0f7fa/005b96?text=Modern+Dental+Clinic+Image') no-repeat center center/cover;
-            height: 90vh; display: flex; align-items: center; color: var(--white); text-align: center;
+            /* Changed from height to min-height so content can expand without breaking out */
+            min-height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            color: var(--white); 
+            text-align: center;
+            /* Added padding at the bottom so the floating banner has room */
+            padding: 100px 0 140px 0; 
         }
-        .hero-content { max-width: 900px; margin: 0 auto; padding-top: 50px; }
+        .hero-content { max-width: 900px; margin: 0 auto; }
         .hero-content h2 { font-size: 4rem; font-weight: 800; margin-bottom: 25px; line-height: 1.2; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .hero-content p { font-size: 1.25rem; margin-bottom: 40px; opacity: 0.95; font-weight: 300; }
         
@@ -148,10 +124,17 @@
             border-radius: 30px; font-size: 0.95rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* --- Trust Banner --- */
+        /* --- Trust Banner (FIXED FOR OVERLAP) --- */
         #trust-banner {
-            background: var(--white); transform: translateY(-50%); box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-radius: 20px; padding: 40px; position: relative; z-index: 10; margin-bottom: -50px;
+            background: var(--white); 
+            /* Safely pulls the banner up over the hero section without breaking layout */
+            margin-top: -90px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-radius: 20px; 
+            padding: 40px; 
+            position: relative; 
+            z-index: 10; 
+            margin-bottom: 40px;
         }
         .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
         .trust-item { border-right: 1px solid #edf2f7; padding: 10px; }
@@ -183,7 +166,7 @@
 
         /* --- Services/Technology Section --- */
         #technology { padding: var(--section-spacing) 0; background-color: var(--bg-light); }
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .tech-card {
             background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             transition: all 0.4s ease; border-bottom: 4px solid transparent;
@@ -239,7 +222,6 @@
         .map-box iframe { width: 100%; height: 100%; min-height: 500px; border: none; }
 
         footer { background: #1a202c; color: #a0aec0; padding: 40px 0; text-align: center; }
-
         .mobile-sticky-footer { display: none; }
 
         /* =========================================
@@ -248,6 +230,8 @@
            
         @media (max-width: 1024px) {
             .hero-content h2 { font-size: 3rem; }
+            #hero { padding: 80px 0 100px 0; }
+            #trust-banner { margin-top: -60px; padding: 30px; }
             .about-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
             .feature-list li { justify-content: center; }
             .experience-badge { right: 50%; transform: translateX(50%); bottom: -40px; }
@@ -258,7 +242,7 @@
         @media (max-width: 768px) {
             :root { --section-spacing: 60px; }
             
-            /* Hamburger Menu Logic */
+            /* Hamburger Menu */
             .hamburger { display: block; }
             .nav-menu {
                 position: absolute; top: 100%; left: 0; width: 100%; background: var(--white);
@@ -268,15 +252,21 @@
             .nav-menu.active { max-height: 400px; }
             .nav-menu li { width: 100%; text-align: center; border-bottom: 1px solid #f0f0f0; }
             .nav-menu li a { display: block; padding: 20px; }
-            .header-contact { display: none; } /* Hide desktop button, rely on mobile sticky */
-
-            /* Typography & Layout adjustments */
-            #hero { height: 80vh; }
+            .header-contact { display: none; }
+            
+            /* Prevent overlap entirely on mobile by stacking normally */
+            #hero { min-height: auto; padding: 60px 0; }
             .hero-content h2 { font-size: 2.2rem; }
             .hero-content p { font-size: 1.1rem; }
-            .hero-badges { display: none; } /* Save space on mobile */
+            .hero-badges { display: none; } 
             
-            #trust-banner { margin-top: 20px; transform: none; box-shadow: none; border: 1px solid #eee; }
+            /* Remove floating effect on small screens for safety */
+            #trust-banner { 
+                margin-top: 30px; 
+                margin-bottom: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+                border: 1px solid #eee; 
+            }
             .trust-grid { grid-template-columns: 1fr; gap: 0; }
             .trust-item { border-right: none; border-bottom: 1px solid #edf2f7; padding: 30px 10px; }
             .trust-item:last-child { border-bottom: none; }
@@ -284,13 +274,12 @@
             .section-title h2 { font-size: 2.2rem; }
             .contact-info-box { padding: 40px 20px; }
             
-            /* Sticky Call Button for Mobile Conversion */
             .mobile-sticky-footer {
                 display: block; position: fixed; bottom: 0; left: 0; width: 100%;
                 background: var(--white); padding: 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 9999;
             }
             .mobile-sticky-footer .btn { width: 100%; font-size: 1.2rem; padding: 15px; border-radius: 10px;}
-            body { padding-bottom: 80px; } /* Prevent footer from hiding content */
+            body { padding-bottom: 80px; } 
         }
     </style>
 </head>
@@ -448,7 +437,7 @@
         <section id="contact">
             <div class="container">
                 <div class="section-title" style="color: white; margin-bottom: 50px;">
-                    <h2 style="color: white;">Visit Ethical Dental</h2>
+                    <h2 style="color: white; border-bottom: none;">Visit Ethical Dental</h2>
                 </div>
                 <div class="contact-container">
                     <div class="contact-info-box">
@@ -481,7 +470,7 @@
                         <a href="tel:01141410494" class="btn" style="background: var(--white); color: var(--primary-color); width: 100%; margin-top: 15px;"><i class="fas fa-phone"></i> Call Now to Book</a>
                     </div>
                     <div class="map-box">
-                        <iframe src="https://maps.google.com/maps?q=Ethical%20Dental%20Dr.%20Siddharth%20Garg%20Rohini&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" aria-label="Google Map Location of Ethical Dental"></iframe>
+                        <iframe src="http://googleusercontent.com/maps.google.com/3" allowfullscreen="" loading="lazy" aria-label="Google Map Location of Ethical Dental"></iframe>
                     </div>
                 </div>
             </div>
@@ -506,7 +495,6 @@
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // Change icon from bars to X
             const icon = hamburger.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -517,7 +505,6 @@
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -531,13 +518,11 @@
             const widget = document.getElementById('live-status-widget');
             const now = new Date();
             
-            // IST Timezone conversion
             const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: 'numeric', hour12: false };
             const formatter = new Intl.DateTimeFormat([], options);
             const timeString = formatter.format(now);
             const currentHour = parseInt(timeString.split(':')[0]);
             
-            // Open between 9 AM and 8 PM
             const isOpen = currentHour >= 9 && currentHour < 20;
 
             if (isOpen) {
